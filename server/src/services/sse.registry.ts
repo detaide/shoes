@@ -21,6 +21,9 @@ const registry = new Map<string, SseConnection>();
 export function register(conn: SseConnection): void {
   const old = registry.get(conn.clientId);
   if (old && !old.closed) {
+    // 先标记旧连接已被取代,再结束它;
+    // 旧连接的 close 处理器据此跳过注销,避免误删刚注册的新连接。
+    old.closed = true;
     clearInterval(old.heartbeat);
     try {
       old.res.end();
@@ -36,9 +39,11 @@ export function getConn(clientId: string): SseConnection | undefined {
   return registry.get(clientId);
 }
 
-export function unregister(clientId: string): void {
+export function unregister(clientId: string, onlyConn?: SseConnection): void {
   const c = registry.get(clientId);
   if (!c) return;
+  // 仅当注册表里仍是本连接时才删除;若已被新连接取代则跳过。
+  if (onlyConn && c !== onlyConn) return;
   clearInterval(c.heartbeat);
   registry.delete(clientId);
   logger.info('sse', `连接注销 ${clientId}(在线 ${registry.size})`);

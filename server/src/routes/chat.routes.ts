@@ -251,7 +251,8 @@ chatRouter.get('/connect', (req, res) => {
 
   res.on('close', () => {
     conn.closed = true;
-    unregister(clientId);
+    // 仅当注册表里仍是本连接时才注销(防止旧连接 close 误删新连接)
+    unregister(clientId, conn);
     logger.debug('chat', `通道关闭 ${clientId}`);
   });
 

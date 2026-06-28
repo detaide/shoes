@@ -1,0 +1,101 @@
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.chat-header svg {
+  color: var(--color-accent);
+}
+
+/* 会话切换触发按钮 */
+.session-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  max-width: 60%;
+  padding: 0.25em 0.6em;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.session-trigger:hover {
+  border-color: var(--color-accent);
+  background: var(--color-bg);
+}
+.session-trigger svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+.session-trigger-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.session-trigger-arrow {
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+  color: var(--color-muted);
+  font-size: 0.8rem;
+}
+
+.chat-header-right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.generating-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.15em 0.6em;
+  border-radius: 99px;
+  background: var(--color-accent);
+  color: #fff;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.clear-btn {
+  padding: 0.2em 0.7em;
+  font-size: 0.72rem;
+  border: 1px solid var(--color-border);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.clear-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}

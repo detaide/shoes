@@ -1,0 +1,31 @@
+/* ═══ AppShell — 根布局 ═══ */
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 桌面端:侧边栏 + 内容区 */
+.app-shell.desktop {
+  flex-direction: row;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 移动端:内容区 + 底部 Tab */
+.app-shell.mobile {
+  flex-direction: column;
+}
+
+.app-shell.mobile .app-content {
+  flex: 1;
+  height: calc(100vh - var(--tabbar-height));
+}

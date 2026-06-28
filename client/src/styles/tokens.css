@@ -1,0 +1,20 @@
+/* ═══════════════════════════════════════════
+   设计令牌 — 从原 App.css :root 抽取
+   各页面 CSS 通过 @import 引入
+   ═══════════════════════════════════════════ */
+
+:root {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-border: #30363d;
+  --color-accent: #e94560;
+  --color-accent2: #0f9b8e;
+  --color-text: #e6edf3;
+  --color-muted: #8b949e;
+  --radius: 0.75rem;
+  --gap-sm: 0.5rem;
+  --gap-md: 1rem;
+  --gap-lg: 2rem;
+  --sidebar-width: 220px;
+  --tabbar-height: 62px;
+}

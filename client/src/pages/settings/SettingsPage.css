@@ -1,0 +1,194 @@
+.settings-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.settings-header {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.settings-header svg {
+  color: var(--color-accent);
+}
+
+.settings-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+.settings-loading {
+  color: var(--color-muted);
+  text-align: center;
+  padding: 2rem;
+}
+
+.setting-group {
+  margin-bottom: 1.5rem;
+}
+
+.setting-group h3 {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  padding-left: 0.3rem;
+}
+
+.setting-field {
+  margin-bottom: 0.75rem;
+}
+
+.setting-field label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+
+.setting-input {
+  width: 100%;
+  padding: 0.5em 0.7em;
+  font-size: 0.82rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.15s;
+}
+.setting-input:focus {
+  border-color: var(--color-accent);
+}
+.setting-input.mono {
+  font-family: 'SF Mono', 'Cascadia Code', 'Consolas', monospace;
+}
+
+.setting-hint {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  margin-top: 0.2rem;
+}
+
+.setting-input-row {
+  display: flex;
+  gap: 0.3rem;
+}
+.setting-input-row .setting-input {
+  flex: 1;
+}
+
+.setting-toggle-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s;
+}
+.setting-toggle-btn:hover {
+  border-color: var(--color-accent);
+}
+
+.setting-readonly {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.7rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin-bottom: 0.35rem;
+  font-size: 0.82rem;
+}
+.setting-readonly code {
+  font-size: 0.78rem;
+  color: var(--color-accent);
+  background: var(--color-bg);
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+}
+
+.setting-textarea {
+  width: 100%;
+  padding: 0.6em 0.7em;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+}
+.setting-textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.setting-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.setting-save-btn {
+  flex: 1;
+  padding: 0.65em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+.setting-save-btn:hover {
+  opacity: 0.85;
+}
+.setting-save-btn:active {
+  transform: scale(0.98);
+}
+
+.setting-reset-btn {
+  flex: 1;
+  padding: 0.65em;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+.setting-reset-btn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.setting-about {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}

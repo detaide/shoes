@@ -1,0 +1,139 @@
+/* ═══ ImageModal — 预览弹窗 ═══ */
+
+.img-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.img-modal-box {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.img-modal-box img {
+  max-width: 90vw;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+
+.img-modal-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.img-modal-caption {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60%;
+}
+
+.img-modal-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.img-modal-btn {
+  padding: 0.25em 0.8em;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.img-modal-btn.save {
+  border: 1px solid var(--color-accent2);
+  background: transparent;
+  color: var(--color-accent2);
+}
+.img-modal-btn.save:hover {
+  background: var(--color-accent2);
+  color: #fff;
+}
+
+.img-modal-btn.primary {
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+}
+.img-modal-btn.primary:hover {
+  opacity: 0.85;
+}
+
+.img-modal-btn.danger {
+  border: 1px solid var(--color-accent);
+  background: transparent;
+  color: var(--color-accent);
+}
+.img-modal-btn.danger:hover {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.img-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+.img-modal-close:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+/* ── 右键菜单(全局共享) ── */
+.ctx-menu {
+  position: fixed;
+  z-index: 200;
+  min-width: 140px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 4px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+.ctx-menu button {
+  display: block;
+  width: 100%;
+  padding: 0.5em 1rem;
+  border: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+.ctx-menu button:hover {
+  background: var(--color-border);
+}

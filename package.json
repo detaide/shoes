@@ -1,0 +1,14 @@
+{
+  "name": "shoes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI 鞋类商品图生成 WebUI — 前后端编排脚本",
+  "type": "module",
+  "scripts": {
+    "install:all": "node scripts/build.mjs install",
+    "build": "node scripts/build.mjs build",
+    "deploy": "node scripts/build.mjs deploy",
+    "clean": "node scripts/build.mjs clean",
+    "typecheck": "node scripts/build.mjs install && cd client && npm run typecheck && cd ../server && npm run typecheck"
+  }
+}

@@ -15,8 +15,14 @@ import type {
   SseText,
 } from '@shared/types';
 
-/** 开发期直连后端(绕过 Vite 代理对 SSE 的缓冲),生产期走相对路径 */
-const SSE_BASE = import.meta.env.DEV ? 'http://localhost:3001' : '';
+/**
+ * SSE 通道基址:默认相对当前页面 origin。
+ * - dev:页面 origin 即 Vite(5173),由 vite.config 代理 /api → 后端 3001
+ * - 生产:同源/反向代理转发 /api
+ * - 跨源(前端与后端不同源)时,构建期用 VITE_API_BASE 指定后端绝对地址
+ * 注意:不要硬编码 localhost,否则从别的机器访问会指向浏览器本机。
+ */
+const SSE_BASE = import.meta.env.VITE_API_BASE ?? '';
 
 export interface ChannelHandlers {
   onConnected?(d: SseConnected): void;
